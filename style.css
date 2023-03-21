@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Red Hat Mono', monospace;
+    color: #dddddd;
+}
+
+a {
+    text-decoration: none;
+}
+
+#click-to-enter {
+    z-index: 420;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#text {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#text:hover {
+    color: #bbb;
+}
+
+.fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 1s ease;
+}
+
+.background {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#content {
+    z-index: 4;
+    display: inline-block !important;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 10px;
+}
+
+.centering {
+    display: flex;
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#center-logo {
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    opacity: 90%;
+    filter: drop-shadow(0 0 1rem rgb(87 87 87));
+}
+
+#center-links {
+    width: 200px;
+    table-layout: fixed;
+    color: #dddddd;
+}
+
+#center-links td {
+    cursor: pointer;
+}
+
+#center-links a:hover {
+    color: #bbb;
+}
+
+#center-links td:first-child {
+    text-align: right !important;
+    padding-right: 10px !important;
+    border-right: solid 1px #dddddd;
+}
+
+#center-links td:last-child {
+    text-align: left !important;
+    padding-left: 10px !important;
+    border-left: solid 1px #dddddd;
+}
+
+
+
+
+/*
+  ///////////////////////////////////////
+ ///////// STARS AND ANIMATION /////////
+///////////////////////////////////////
+*/
+
+@keyframes make-twinkle {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+.stars,
+.twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    background: #000 url(stars.png) repeat top center;
+    z-index: 0;
+}
+
+.twinkling {
+    background: transparent url(twinkling.png) repeat top center;
+    z-index: 1;
+    animation: make-twinkle 200s linear infinite;
+}
