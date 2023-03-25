@@ -6,26 +6,12 @@ function anim_frame(audio_analyser, data_array) {
     console.log("ok");
 }
 
-/*
-function playSong() {
-
-    audio.crossOrigin = "anonymous";
-
-    audio.volume = 0.2;
-
-    audio.play();
-
-    audio.addEventListener("ended", function (e) {
-        playSong();
-    });
-}
-*/
-
 function run() {
     /*
-    This was taken from https://ibuprofen.cc
-    */
-    let song = "assets/d2h5IGRpZCB5b3UgdGFrZSB0aGUgdGltZSB0byBkZWNvZGUgdGhpcw==.mp3";
+      This was taken from https://ibuprofen.cc
+      */
+    let song =
+        "assets/d2h5IGRpZCB5b3UgdGFrZSB0aGUgdGltZSB0byBkZWNvZGUgdGhpcw==.mp3";
 
     let audio = new Audio(song);
     audio.volume = 0.2;
@@ -44,6 +30,56 @@ function run() {
     var data_array = new Uint8Array(buffer_length);
 
     audio_analyser.getByteTimeDomainData(data_array);
+
+    document.addEventListener("visibilitychange", async (event) => {
+        if (document.visibilityState == "hidden") {
+            audio.volume = 0.18;
+            await sleep(100);
+            audio.volume = 0.16;
+            await sleep(100);
+            audio.volume = 0.14;
+            await sleep(100);
+            audio.volume = 0.12;
+            await sleep(100);
+            audio.volume = 0.1;
+            await sleep(100);
+            audio.volume = 0.08;
+            await sleep(100);
+            audio.volume = 0.06;
+            await sleep(100);
+            audio.volume = 0.04;
+            await sleep(100);
+            audio.volume = 0.02;
+            await sleep(100);
+            audio.volume = 0;
+            
+            audio.pause();
+        } else {
+            audio.play();
+
+            audio.volume = 0;
+            await sleep(100);
+            audio.volume = 0.02;
+            await sleep(100);
+            audio.volume = 0.04;
+            await sleep(100);
+            audio.volume = 0.06;
+            await sleep(100);
+            audio.volume = 0.08;
+            await sleep(100);
+            audio.volume = 0.1;
+            await sleep(100);
+            audio.volume = 0.12;
+            await sleep(100);
+            audio.volume = 0.14;
+            await sleep(100);
+            audio.volume = 0.16;
+            await sleep(100);
+            audio.volume = 0.18;
+            await sleep(100);
+            audio.volume = 0.2;
+        }
+    });
 
     audio.addEventListener("ended", function (e) {
         audio.play();
