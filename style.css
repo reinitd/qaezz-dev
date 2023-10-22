@@ -135,7 +135,9 @@ a {
 
 @media only screen and (max-width: 730px) {
   #greeting-side {
-    transform: translate(0, 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
   }
 
   #greeting-side #greeting-text {
@@ -146,11 +148,15 @@ a {
     border-bottom: 5px solid var(--color-border);
     border-radius: 0 0 15px 15px;
   }
+
+  #greeting-side #greeting-text h1 {
+    white-space: nowrap;
+  }
   
   #intro-container {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     position: absolute;
     width: 100vw;
@@ -164,11 +170,50 @@ a {
     display: inline-flex;
     gap: 10px;
     transform: scale(1.1);
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   #greeting-side span[period]::after {
     content: '';
   }
   
+}
+
+@media only screen and (max-width: 320px) {
+  #greeting-side {
+    transform: scale(.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  #greeting-side #greeting-text h1 {
+    font-size: clamp(10vw, 15vw, 5em);
+  }
+
+  #opposite-side #music-player {
+    display: inline-flex;
+    gap: 10px;
+    transform: scale(.9);
+    margin-top: -5px;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  
+  #greeting-side {
+    /* transform: translate(0, clamp(20%, 30%, 60%)) scale(.9); */
+    margin: 0 5px;
+  }
+
+  #greeting-side #greeting-text h1 {
+    font-size: clamp(10vw, 15vw, 5em);
+  }
+
+  #opposite-side #music-player {
+    display: inline-flex;
+    gap: 10px;
+    transform: scale(.8);
+    margin-top: 10px;
+  }
 }
