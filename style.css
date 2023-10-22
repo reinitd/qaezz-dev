@@ -63,14 +63,14 @@ a {
   color: var(--color-accent);
 }
 
-#greeting-side span[underline] {
-  text-decoration: underline;
+#greeting-side span[period]::after {
+  content: '.';
 }
 
 #greeting-side #greeting-text {
   float: right;
   height: auto;
-  padding: 5px 2.5px;
+  padding: 5px 10px;
   border-right: 5px solid var(--color-border);
   border-radius: 0 15px 15px 0;
 }
@@ -131,3 +131,44 @@ a {
   40% {transform: translateY(-15px);} 
   60% {transform: translateY(-5px);} 
 } 
+
+
+@media only screen and (max-width: 730px) {
+  #greeting-side {
+    transform: translate(0, 50%);
+  }
+
+  #greeting-side #greeting-text {
+    height: auto;
+    padding: 2.5px 10px;
+    text-align: left;
+    border-right: none;
+    border-bottom: 5px solid var(--color-border);
+    border-radius: 0 0 15px 15px;
+  }
+  
+  #intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    gap: 1px;
+  
+    user-select: none;
+  }
+
+  #opposite-side #music-player {
+    display: inline-flex;
+    gap: 10px;
+    transform: scale(1.1);
+    margin-top: 10px;
+  }
+
+  #greeting-side span[period]::after {
+    content: '';
+  }
+  
+}
