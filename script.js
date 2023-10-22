@@ -16,22 +16,26 @@ const songs = [
     {
         'artist': 'blksmiith',
         'name': 'SR20DET',
-        'extension': 'jpg'
+        'extension': 'jpg',
+        'nameSize': 2
     },
     {
         'artist': 'F L R S H',
         'name': 'ILLUSIONS',
-        'extension': 'jpg'
+        'extension': 'jpg',
+        'nameSize': 2 
     },
     {
         'artist': 'piri & tommy',
         'name': 'on & on',
-        'extension': 'jpg'
+        'extension': 'jpg',
+        'nameSize': 2 
     },
     {
         'artist': 'Travis Scott',
         'name': 'My Eyes (BPE)',
-        'extension': 'png'
+        'extension': 'png',
+        'nameSize': 1.5 
     }
 ];
 
@@ -104,6 +108,8 @@ function playSong(songData) {
     songCoverImage.setAttribute('src', `assets/images/covers/${songData.name}.${songData.extension}`);
     songNameField.textContent = songData.name;
     songArtistField.textContent = songData.artist;
+
+    songNameField.setAttribute('style', `font-size: ${songData.nameSize}em`);
 
     if (document.getElementById('song-player') !== null) {
         audio.remove();
