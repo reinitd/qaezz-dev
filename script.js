@@ -15,15 +15,23 @@ var songIndex;
 const songs = [
     {
         'artist': 'blksmiith',
-        'name': 'SR20DET'
+        'name': 'SR20DET',
+        'extension': 'jpg'
     },
     {
         'artist': 'F L R S H',
-        'name': 'ILLUSIONS'
+        'name': 'ILLUSIONS',
+        'extension': 'jpg'
     },
     {
         'artist': 'piri & tommy',
-        'name': 'on & on'
+        'name': 'on & on',
+        'extension': 'jpg'
+    },
+    {
+        'artist': 'Travis Scott',
+        'name': 'My Eyes (BPE)',
+        'extension': 'png'
     }
 ];
 
@@ -93,7 +101,7 @@ function toggleMusic() {
 function playSong(songData) {
     let song = `assets/audio/${songData.name}.mp3`;
 
-    songCoverImage.setAttribute('src', `assets/images/covers/${songData.name}.jpg`);
+    songCoverImage.setAttribute('src', `assets/images/covers/${songData.name}.${songData.extension}`);
     songNameField.textContent = songData.name;
     songArtistField.textContent = songData.artist;
 

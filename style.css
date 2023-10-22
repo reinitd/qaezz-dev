@@ -31,6 +31,13 @@ div[spacer] {
   font-size: larger;
 }
 
+footer {
+  opacity: .5;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: small;
+}
+
 a {
   text-decoration: none;
 }
