@@ -14,6 +14,12 @@ var songIndex;
 
 const songs = [
     {
+        'artist': '6LACK',
+        'name': 'Never Know',
+        'extension': 'jpg',
+        'nameSize': 1.5
+    },
+    {
         'artist': 'blksmiith',
         'name': 'SR20DET',
         'extension': 'jpg',
@@ -34,6 +40,12 @@ const songs = [
     {
         'artist': 'Travis Scott',
         'name': 'My Eyes (BPE)',
+        'extension': 'png',
+        'nameSize': 1.5 
+    },
+    {
+        'artist': 'Lul Tys 🕊',
+        'name': 'What Love Is',
         'extension': 'png',
         'nameSize': 1.5 
     }
