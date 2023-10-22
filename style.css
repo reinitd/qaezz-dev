@@ -1,148 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap");
+
+:root {
+  --color-background: rgb(14, 17, 34);
+  --color-text: rgb(250, 250, 250);
+  --color-accent: rgb(65, 123, 230);
+  --color-border: rgb(30, 50, 92);
+}
 
 ::-webkit-scrollbar {
-    width: 0;
+  display: none;
 }
 
 * {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    font-family: 'Red Hat Mono', monospace;
-    color: #dddddd;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "Red Hat Mono", monospace;
+  color: var(--color-text);
+}
+
+html {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+div[spacer] {
+  text-align: center;
+  padding-bottom: 500px;
+  padding-top: 1200px;
+  font-size: larger;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-#click-to-enter {
-    z-index: 420;
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-color: black;
+#particles-js {
+  position: fixed;
+  background-color: var(--color-background);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-#text {
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
+#intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  gap: 10px;
+
+  user-select: none;
 }
 
-#text:hover {
-    color: #bbb;
+#greeting-side, #opposite-side {
+  flex: 1;
 }
 
-.fade-out {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 1s ease;
+#greeting-side span[accent] {
+  color: var(--color-accent);
 }
 
-.background {
-    z-index: 0;
-    height: 100%;
-    width: 100%;
+#greeting-side span[underline] {
+  text-decoration: underline;
 }
 
-#content {
-    z-index: 4;
-    display: inline-block !important;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    padding: 10px;
+#greeting-side #greeting-text {
+  float: right;
+  height: auto;
+  padding: 5px 2.5px;
+  border-right: 5px solid var(--color-border);
+  border-radius: 0 15px 15px 0;
 }
 
-.centering {
-    display: flex;
-    position: fixed;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+#greeting-side #greeting-text h1 {
+  font-size: 3em;
 }
 
-#center-logo {
-    z-index: 3;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    opacity: 90%;
-    filter: drop-shadow(0 0 1rem rgb(87 87 87));
+#opposite-side #music-player {
+  display: inline-flex;
+  gap: 10px;
 }
 
-#center-links {
-    width: 200px;
-    table-layout: fixed;
-    color: #dddddd;
+#opposite-side #music-player img {
+  aspect-ratio: 1/1;
+  height: 7em;
+  border-radius: 5px;
 }
 
-#center-links td {
-    cursor: pointer;
+#opposite-side #music-player #controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+  opacity: .8;
 }
 
-#center-links a:hover {
-    color: #bbb;
+#opposite-side #music-player #controls i {
+  cursor: pointer;
+
+  transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#center-links td:first-child {
-    text-align: right !important;
-    padding-right: 10px !important;
-    border-right: solid 1px #dddddd;
+#opposite-side #music-player #controls i:hover {
+  transform: scale(.9);
+  opacity: .5;
 }
 
-#center-links td:last-child {
-    text-align: left !important;
-    padding-left: 10px !important;
-    border-left: solid 1px #dddddd;
+#scroll-notation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#scroll-notation i {
+  opacity: .5;
+  animation-name: bounce; 
+  animation-duration: 2s; 
 }
 
 
-
-
-/*
-  ///////////////////////////////////////
- ///////// STARS AND ANIMATION /////////
-///////////////////////////////////////
-*/
-
-@keyframes make-twinkle {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: -10000px 5000px;
-    }
-}
-
-.stars,
-.twinkling {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.stars {
-    background: #000 url(stars.png) repeat top center;
-    z-index: 0;
-}
-
-.twinkling {
-    background: transparent url(twinkling.png) repeat top center;
-    z-index: 1;
-    animation: make-twinkle 200s linear infinite;
-}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-15px);} 
+  60% {transform: translateY(-5px);} 
+} 

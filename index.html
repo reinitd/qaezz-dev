@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-png" href="logo.png">
+    <title>qaezz();</title>
+    <link rel="icon" type="image/x-png" href="assets/images/logo.png">
+    <meta name="description" content="Portfolio site for QAEZZ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
-    <meta name="twitter:card" content="summary_image" />
-    <meta name="twitter:image" content="https://qaezz.dev/logo2.png">
-    <meta name="twitter:image:src" content="https://qaezz.cc/logo2.png">
-    <meta property="og:title" content="QÆZZ" />
-    <meta property="og:description"
-        content="Im a shitty python/c# dev that likes to dabble in other langs, I guess, I dont know. Wtf do I even put here?" />
-    <meta name="theme-color" content="#2b2d31" />
-
-    <link type="application/json+oembed" href="https://qaezz.dev/oembed.json" />
-    <title>QÆZZ</title>
 </head>
 
 <body>
-    <div id="click-to-enter">
-        <h4 id="text"
-            onclick="element = document.getElementById('click-to-enter'); element.classList.add('fade-out'); run();">
-            .click_to_enter.</h4>
-    </div>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="particles-js"></div>
 
-    <div class="background">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-    </div>
-    <img id="center-logo" src="logo2.png" />
-    <div id="content">
-        <div class="centering">
-            <center>
-                <h1>.QÆZZ.</h1>
-                <!--
-                <span id="center-links">
-                    <a>.GitHub.</a> | <a>.Discord.</a>
-                </span>
-                -->
-                <table id="center-links">
-                    <tr>
-                        <td><a href="https://github.com/qaezz" target="_blank">.GitHub.</a></td>
-                        <td><a href="https://github.com/the-holy-church-of-terry-davis" target="_blank">.GH_Org.</a></td>
-                    </tr>
-                </table>
-            </center>
+    <div id="intro-container">
+        <div id="greeting-side">
+            <div id="greeting-text">
+                <h1>Hello,<br />I'm <span accent>QAEZZ</span>.<br />A <span underline>Developer</span>.</h1>
+            </div>
+        </div>
+        <div id="opposite-side">
+            <div id="music-player">
+                <img id="song-cover" src="assets/images/covers/SR20DET.jpg" />
+                <div>
+                    <h1 id="song-name">SR20DET</h1>
+                    <h3 style="color: rgba(200, 200, 200, .8);" id="song-artist">blksmiith</h3>
+                    <div id="controls">
+                        <i id="previous-song" class="fa-2xl fa-solid fa-backward"></i>
+                        <i onclick="toggleMusic();" id="play-pause" class="fa-2xl fa-solid fa-play first-run"></i>
+                        <i id="next-song" class="fa-2xl fa-solid fa-forward"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div id="scroll-notation">
+        <i class="fa-solid fa-xl fa-angle-down fa-fade"></i>
+        <i class="fa-solid fa-xl fa-angle-down fa-fade"></i>
+    </div>
+
+    <div spacer>Coming Soon :)</div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/bbd5e05e51.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
