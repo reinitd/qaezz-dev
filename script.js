@@ -1,4 +1,4 @@
-const titleText = document.title;
+var titleText = document.title;
 
 const previousSongButton = document.getElementById('previous-song');
 const playPauseButton = document.getElementById('play-pause');
@@ -189,6 +189,5 @@ window.addEventListener('scroll', () => {
     });
 });
 
-window.onload = function () {
-    titleMarquee();
-}
+
+titleMarquee();
