@@ -8,6 +8,8 @@ const songCoverImage = document.getElementById('song-cover');
 const songNameField = document.getElementById('song-name');
 const songArtistField = document.getElementById('song-artist');
 
+const navigationValues = document.getElementsByClassName('fa-angle-right');
+
 var audio;
 var songIndex;
 
@@ -29,25 +31,25 @@ const songs = [
         'artist': 'F L R S H',
         'name': 'ILLUSIONS',
         'extension': 'jpg',
-        'nameSize': 2 
+        'nameSize': 2
     },
     {
         'artist': 'piri & tommy',
         'name': 'on & on',
         'extension': 'jpg',
-        'nameSize': 2 
+        'nameSize': 2
     },
     {
         'artist': 'Travis Scott',
         'name': 'My Eyes (BPE)',
         'extension': 'png',
-        'nameSize': 1.5 
+        'nameSize': 1.5
     },
     {
         'artist': 'Lul Tys 🕊',
         'name': 'What Love Is',
         'extension': 'png',
-        'nameSize': 1.5 
+        'nameSize': 1.5
     }
 ];
 
@@ -146,6 +148,28 @@ function playSong(songData) {
         console.log(`Played Index: ${songIndex}`);
     });
 }
+
+
+function navigationHover(anchor, hovering) {
+    const icon = anchor.querySelector("i");
+
+    if (hovering) {
+        icon.setAttribute('style', 'transform: rotate(360deg)');
+
+        icon.classList.remove('fa-angle-right');
+        icon.classList.add('fa-arrow-right');
+
+        anchor.style.marginLeft = '20px';
+    } else {
+        icon.setAttribute('style', 'transform: rotate(-360deg)');
+
+        icon.classList.remove('fa-arrow-right');
+        icon.classList.add('fa-angle-right');
+
+        anchor.style.marginLeft = '10px';
+    }
+}
+
 
 
 window.addEventListener('scroll', () => {
