@@ -1,0 +1,10 @@
+{
+    "version": "1.0",
+    "type": "rich",
+    "provider_name": "Your Website Name",
+    "provider_url": "https://your-website-url.com",
+    "title": "<a href='https://qaezz.dev' style='color: #417BE6;'>qaezz();</a>",
+    "thumbnail_url": "https://your-website-url.com/assets/images/logo.png",
+    "description": "Welcome to my portfolio site. Discover what skills I have (or lack), along with some of my projects.",
+    "color": "#417BE6"
+  }
