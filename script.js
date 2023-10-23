@@ -1,4 +1,4 @@
-
+const titleText = document.title;
 
 const previousSongButton = document.getElementById('previous-song');
 const playPauseButton = document.getElementById('play-pause');
@@ -170,6 +170,12 @@ function navigationHover(anchor, hovering) {
     }
 }
 
+function titleMarquee() {
+    titleText =
+        titleText.substring(1, titleText.length) + titleText.substring(0, 1);
+    document.title = titleText;
+    setTimeout("titleMarquee()", 500);
+}
 
 
 window.addEventListener('scroll', () => {
@@ -183,3 +189,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
+window.onload = function () {
+    titleMarquee();
+}
