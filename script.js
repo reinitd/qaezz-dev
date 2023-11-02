@@ -1,98 +1,193 @@
-console.log("Hello");
+var titleText = document.title;
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const previousSongButton = document.getElementById('previous-song');
+const playPauseButton = document.getElementById('play-pause');
+const nextSongButton = document.getElementById('next-song');
 
-function anim_frame(audio_analyser, data_array) {
-    console.log("ok");
-}
+const songCoverImage = document.getElementById('song-cover');
+const songNameField = document.getElementById('song-name');
+const songArtistField = document.getElementById('song-artist');
 
-function run() {
-    /*
-      This was taken from https://ibuprofen.cc
-      */
-    let song =
-        "assets/d2h5IGRpZCB5b3UgdGFrZSB0aGUgdGltZSB0byBkZWNvZGUgdGhpcw==.mp3";
+const navigationValues = document.getElementsByClassName('fa-angle-right');
 
-    let audio = new Audio(song);
-    audio.volume = 0.2;
+var audio;
+var songIndex;
 
-    var audio_ctx = new (window.AudioContext || window.webkitAudioContext)();
-    var audio_src = audio_ctx.createMediaElementSource(audio);
-    var audio_analyser = audio_ctx.createAnalyser();
-    var logo = document.getElementById("center-logo");
 
-    audio.play();
-    audio_src.connect(audio_analyser);
-    audio_src.connect(audio_ctx.destination);
-    audio_analyser.fftSize = 2048;
+const songs = [
+    {
+        'artist': '6LACK',
+        'name': 'Never Know',
+        'extension': 'jpg',
+        'nameSize': 1.5
+    },
+    {
+        'artist': 'blksmiith',
+        'name': 'SR20DET',
+        'extension': 'jpg',
+        'nameSize': 2
+    },
+    {
+        'artist': 'F L R S H',
+        'name': 'ILLUSIONS',
+        'extension': 'jpg',
+        'nameSize': 2
+    },
+    {
+        'artist': 'piri & tommy',
+        'name': 'on & on',
+        'extension': 'jpg',
+        'nameSize': 2
+    },
+    {
+        'artist': 'Travis Scott',
+        'name': 'My Eyes (BPE)',
+        'extension': 'png',
+        'nameSize': 1.5
+    },
+    {
+        'artist': 'Lul Tys 🕊',
+        'name': 'What Love Is',
+        'extension': 'png',
+        'nameSize': 1.5
+    }
+];
 
-    var buffer_length = audio_analyser.frequencyBinCount;
-    var data_array = new Uint8Array(buffer_length);
+function musicSeekHandler() {
+    nextSongButton.addEventListener('click', function (e) {
+        songIndex++;
 
-    audio_analyser.getByteTimeDomainData(data_array);
+        if (playPauseButton.classList.contains('fa-play')) {
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+        }
 
-    document.addEventListener("visibilitychange", async (event) => {
-        if (document.visibilityState == "hidden") {
-            audio.volume = 0.18;
-            await sleep(100);
-            audio.volume = 0.16;
-            await sleep(100);
-            audio.volume = 0.14;
-            await sleep(100);
-            audio.volume = 0.12;
-            await sleep(100);
-            audio.volume = 0.1;
-            await sleep(100);
-            audio.volume = 0.08;
-            await sleep(100);
-            audio.volume = 0.06;
-            await sleep(100);
-            audio.volume = 0.04;
-            await sleep(100);
-            audio.volume = 0.02;
-            await sleep(100);
-            audio.volume = 0;
-            
-            audio.pause();
+        audio.pause()
+        if (songIndex < songs.length) {
+            playSong(songs[songIndex]);
         } else {
-            audio.play();
-
-            audio.volume = 0;
-            await sleep(100);
-            audio.volume = 0.02;
-            await sleep(100);
-            audio.volume = 0.04;
-            await sleep(100);
-            audio.volume = 0.06;
-            await sleep(100);
-            audio.volume = 0.08;
-            await sleep(100);
-            audio.volume = 0.1;
-            await sleep(100);
-            audio.volume = 0.12;
-            await sleep(100);
-            audio.volume = 0.14;
-            await sleep(100);
-            audio.volume = 0.16;
-            await sleep(100);
-            audio.volume = 0.18;
-            await sleep(100);
-            audio.volume = 0.2;
+            songIndex = 0;
+            playSong(songs[songIndex]);
         }
     });
 
-    audio.addEventListener("ended", function (e) {
-        audio.play();
+    previousSongButton.addEventListener('click', function (e) {
+        songIndex--;
+
+        if (playPauseButton.classList.contains('fa-play')) {
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+        }
+
+        audio.pause();
+        if (songIndex < 0) {
+            songIndex = songs.length - 1;
+            playSong(songs[songIndex]);
+        } else if (songIndex < songs.length) {
+            playSong(songs[songIndex]);
+        } else {
+            songIndex = 0;
+            playSong(songs[songIndex]);
+        }
     });
-
-    function anim_frame() {
-        requestAnimationFrame(anim_frame);
-        audio_analyser.getByteFrequencyData(data_array);
-
-        var freq = data_array[3];
-
-        logo.width = freq;
-        logo.height = freq;
-    }
-    anim_frame();
 }
+
+function toggleMusic() {
+
+    if (playPauseButton.classList.contains('fa-play')) {
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
+
+        if (playPauseButton.classList.contains('first-run')) {
+            playPauseButton.classList.remove('first-run');
+
+            songIndex = 0;
+            playSong(songs[songIndex]);
+            musicSeekHandler();
+        }
+
+        audio.play();
+
+    } else {
+        playPauseButton.classList.remove('fa-pause');
+        playPauseButton.classList.add('fa-play');
+
+        audio.pause();
+    }
+}
+
+function playSong(songData) {
+    let song = `assets/audio/${songData.name}.mp3`;
+
+    songCoverImage.setAttribute('src', `assets/images/covers/${songData.name}.${songData.extension}`);
+    songNameField.textContent = songData.name;
+    songArtistField.textContent = songData.artist;
+
+    songNameField.setAttribute('style', `font-size: ${songData.nameSize}em`);
+
+    if (document.getElementById('song-player') !== null) {
+        audio.remove();
+    }
+
+    audio = new Audio(song);
+    audio.id = 'song-player';
+    audio.crossOrigin = 'anonymous';
+    audio.volume = 0.2;
+
+    console.log(`%cNow Playing: %c${songData.name} %cby %c${songData.artist} %c(Song index: %c${songIndex}%c)`, 'color: green;', 'color: yellow;', 'color: default;', 'color: blue;', 'color: default;', 'color: cyan;', 'color: default;');
+    var playPromise = audio.play();
+
+    audio.addEventListener('ended', function (e) {
+        songIndex++;
+        if (songIndex < songs.length) {
+            playSong(songs[songIndex]);
+        } else {
+            songIndex = 0;
+            playSong(songs[songIndex]);
+        }
+        console.log(`Played Index: ${songIndex}`);
+    });
+}
+
+
+function navigationHover(anchor, hovering) {
+    const icon = anchor.querySelector("i");
+
+    if (hovering) {
+        icon.setAttribute('style', 'transform: rotate(360deg)');
+
+        icon.classList.remove('fa-angle-right');
+        icon.classList.add('fa-arrow-right');
+
+        anchor.style.marginLeft = '20px';
+    } else {
+        icon.setAttribute('style', 'transform: rotate(-360deg)');
+
+        icon.classList.remove('fa-arrow-right');
+        icon.classList.add('fa-angle-right');
+
+        anchor.style.marginLeft = '10px';
+    }
+}
+
+function titleMarquee() {
+    titleText =
+        titleText.substring(1, titleText.length) + titleText.substring(0, 1);
+    document.title = titleText;
+    setTimeout("titleMarquee()", 500);
+}
+
+
+window.addEventListener('scroll', () => {
+    const opacity = 1 - window.scrollY / (document.body.scrollHeight - window.innerHeight) * 5;
+
+    // limit opacity between 0 and 0.5
+    const limitedOpacity = Math.max(0, Math.min(opacity, 0.5));
+
+    document.querySelectorAll('.fa-angle-down').forEach(element => {
+        element.style.opacity = limitedOpacity;
+    });
+});
+
+
+titleMarquee();
