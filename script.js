@@ -159,7 +159,7 @@ function navigationHover(anchor, hovering) {
         icon.classList.remove('fa-angle-right');
         icon.classList.add('fa-arrow-right');
 
-        anchor.style.marginLeft = '20px';
+        anchor.style.marginLeft = '15px';
     } else {
         icon.setAttribute('style', 'transform: rotate(-360deg)');
 
