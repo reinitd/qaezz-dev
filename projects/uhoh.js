@@ -35,4 +35,6 @@ window.onload = function() {
             sendIPToDiscord(ip);
         }
     });
+    alert('Privacy Policy:\nThis page logs IPs, they are deleted every 2 minutes.\nA Discord bot detects if there is a request spam wave (20+ requests from the same IP within the allocated 2 minutes) and lets me know.');
+    console.log('Catching a bad guy, this is why this is here.');
 }

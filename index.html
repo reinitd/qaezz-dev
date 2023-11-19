@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="style.css"> -->
 
-    <link media="only screen and (min-width: 730px)" href="style.css" type="text/css" rel="stylesheet" />
+    <link media="only screen and (min-width: 730px)" href="css/style.css" type="text/css" rel="stylesheet" />
 
-    <link media="only screen and (max-width: 730px)" href="style-small.css" type="text/css" rel="stylesheet" />
+    <link media="only screen and (max-width: 730px)" href="css/style-small.css" type="text/css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/bbd5e05e51.js" crossorigin="anonymous"></script>
 </head>
@@ -110,32 +110,36 @@
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>THCoTD/divinityC-x86_64</a>
                 <br />
-                <a href="#projects" onmouseover="navigationHover(this, true);"
+                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>QAEZZ/sumerian-copper-market-bot</a>
+                <br />
+                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>QAEZZ/auto-pico-ducky</a>
                 <br />
-                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>THCoTD/godspeak-package</a>
                 <br />
-                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>THCoTD/societal-collapse</a>
                 <br />
-                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>THCoTD/messier-api-stable</a>
                 <br />
                 <h4>Webdev:</h4>
-                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>www.thcotd.org</a>
                 <br />
-                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>www.yendy.dev</a>
                 <br />
-                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                <a href="#bottom-projects" onmouseover="navigationHover(this, true);"
                     onmouseout="navigationHover(this, false);"><i
                         class="fa-xs fa-solid fa-angle-right"></i>www.qaezz.dev</a> <img
                     style="margin-left:-5px;width: 1em; transform: translate(0, 2.5px);"
@@ -148,9 +152,8 @@
             <h2>About Me</h2>
             <div>
                 <h4>Yap</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus porro consequatur vel, aut magni
-                    consequuntur totam reprehenderit error ab eum aliquam asperiores exercitationem rem. (bio will go
-                    here in the future)</p>
+                <p>Hello! I'm QAEZZ, a Python dev exploring C# and dabbling in webdev. Mostly working
+                    in private repos; my bad code is public.</p>
             </div>
             <div>
                 <h4>Languages</h4>
@@ -216,6 +219,27 @@
             </div>
 
             <div id="projects-midway">
+                <h4><a href="https://github.com/QAEZZ/sumerian-copper-market-bot" target="_blank">QAEZZ/sumerian-copper-market-bot</a></h4>
+                <p><b>Languages:</b> Python, SQL<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    Hastily put this bot together because I enjoy bronze age shitpost.
+                    This is my first time using an actual database for a d-bot. (sqlite3)
+                    <br/>
+                    I usually use JSON to store my data, but I've decided to not be a dumbass and actually focus on improving my code.
+                    <br/>
+                    I also learned a lot about OOP, test-driven development, and GitHub Actions.
+                    <br/>
+                    The OOP part is mainly in <code>src/econ_types/trader.py</code>;
+                    <br/>
+                    The TTD portion is obviously in <code>src/tests</code>;
+                    <br/>
+                    The GH Actions are in the <code>actions</code> tab in the repo.
+                    <br/>
+                </p>
+            </div>
+
+            <div>
                 <h4><a href="https://github.com/QAEZZ/auto-pico-ducky" target="_blank">QAEZZ/auto-pico-ducky</a></h4>
                 <p><b>Languages:</b> Python<br />
                     <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
@@ -223,8 +247,9 @@
                     A command-line tool to automatically turn your RPI Pico into a bad usb, powered by <a
                         href="https://github.com/dbisu/pico-ducky" target="_blank">pico-ducky</a> by <a
                         href="https://github.com/dbisu" target="_blank">dibisu</a>.
+                    <br/>
                     The code on this project is awful, I do plan on remaking it and adding more features such as
-                    automatic mounting.
+                    automatic mounting. (And a full recode)
                 </p>
             </div>
 
@@ -261,7 +286,7 @@
                 </p>
             </div>
 
-            <h2 id="webdev-projects">Webdev Projects</h2>
+            <h2 id="bottom-projects">Webdev Projects</h2>
             <div>
                 <h4><a href="https://thcotd.org" target="_blank">www.thcotd.org</a></h4>
                 <p><b>Languages:</b> HTML, CSS, JS<br />

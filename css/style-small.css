@@ -70,6 +70,15 @@ a {
   text-decoration: none;
 }
 
+code {
+  background-color: rgba(20, 20, 20, .25);
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+  font-family: monospace;
+  padding: 1.25px;
+}
+
+
 #particles-js {
   position: fixed;
   background-color: var(--color-background);
