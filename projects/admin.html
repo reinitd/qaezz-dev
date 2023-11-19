@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>def qaezz(): ‎ ‎ </title>
+    <link rel="icon" type="image/x-png" href="assets/images/logo.png">
+
+    <meta content="def qaezz() -> str:" property="og:title" />
+    <meta content="Welcome to my portfolio site. Discover what skills I have (or lack), along with some of my projects."
+        property="og:description" />
+    <meta content="https://qaezz.dev" property="og:url" />
+    <meta content="https://qaezz.dev/assets/images/logo.png" property="og:image" />
+    <meta content="#417be6" data-react-helmet="true" name="theme-color" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <link media="only screen and (min-width: 730px)" href="style.css" type="text/css" rel="stylesheet" />
+
+    <link media="only screen and (max-width: 730px)" href="style-small.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/bbd5e05e51.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="particles-js"></div>
+
+    <div id="intro-container">
+        <div id="top">
+            <div id="greeting-side">
+                <div id="greeting-text">
+                    <h1>Hello,<br />I'm <span accent>QAEZZ</span>.<br />A <span period><u>Developer</u></span></h1>
+                </div>
+            </div>
+            <div id="opposite-side">
+                <div id="music-player">
+                    <img id="song-cover" src="assets/images/covers/Never Know.jpg" />
+                    <div>
+                        <h2 id="song-name">Never Know</h2>
+                        <h3 style="color: rgba(200, 200, 200, .8);" id="song-artist">6LACK</h3>
+                        <div id="controls">
+                            <i id="previous-song" class="fa-2xl fa-solid fa-backward"></i>
+                            <i onclick="toggleMusic();" id="play-pause" class="fa-2xl fa-solid fa-play first-run"></i>
+                            <i id="next-song" class="fa-2xl fa-solid fa-forward"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="quick-links">
+            <a href="https://github.com/qaezz" target="_blank"><i class="fa-lg fa-brands fa-github"></i></a>
+            <a href="https://discord.com/users/1123758641485459477" target="_blank"><i
+                    class="fa-lg fa-brands fa-discord"></i></a>
+            <a href="https://thcotd.org" target="_blank"><i class="fa-lg fa-solid fa-globe"></i></a>
+            <a href="mailto:qaezz.dev@gmail.com" target="_blank"><i class="fa-lg fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
+
+    <a href="#scroll-notation" id="scroll-notation">
+        <i class="fa-solid fa-xl fa-angle-down fa-fade"></i>
+        <i class="fa-solid fa-xl fa-angle-down fa-fade"></i>
+    </a>
+
+
+    <div id="content-container">
+
+        <div id="navigation-wrapper">
+            <div id="navigation">
+                <h2>About Me</h2>
+                <a href="#content" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i class="fa-xs fa-solid fa-angle-right"></i>Yap</a>
+                <br />
+                <a href="#content" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>Languages</a>
+                <br />
+                <a href="#content" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i class="fa-xs fa-solid fa-angle-right"></i>Operating
+                    Systems
+                </a>
+                <br />
+                <a href="#content" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>Version/Source Control
+                </a>
+
+                <h2>Certification</h2>
+                <h4>Studying:</h4>
+                <a href="#certifications" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i class="fa-xs fa-solid fa-angle-right"></i>CompTIA
+                    A+</a>
+                <br />
+                <br />
+                <h4>Planned:</h4>
+                <a href="#certifications" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i class="fa-xs fa-solid fa-angle-right"></i>CompTIA
+                    Net+</a>
+
+                <h2>Projects</h2>
+                <a href="#projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>THCoTD/DAWN</a>
+                <br />
+                <a href="#projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>THCoTD/divinityC-x86_64</a>
+                <br />
+                <a href="#projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>QAEZZ/auto-pico-ducky</a>
+                <br />
+                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>THCoTD/godspeak-package</a>
+                <br />
+                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>THCoTD/societal-collapse</a>
+                <br />
+                <a href="#projects-midway" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>THCoTD/messier-api-stable</a>
+                <br />
+                <h4>Webdev:</h4>
+                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>www.thcotd.org</a>
+                <br />
+                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>www.yendy.dev</a>
+                <br />
+                <a href="#webdev-projects" onmouseover="navigationHover(this, true);"
+                    onmouseout="navigationHover(this, false);"><i
+                        class="fa-xs fa-solid fa-angle-right"></i>www.qaezz.dev</a> <img
+                    style="margin-left:-5px;width: 1em; transform: translate(0, 2.5px);"
+                    src="assets/images/trollface.png" />
+                <br />
+            </div>
+        </div>
+
+        <div id="content">
+            <h2>About Me</h2>
+            <div>
+                <h4>Yap</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus porro consequatur vel, aut magni
+                    consequuntur totam reprehenderit error ab eum aliquam asperiores exercitationem rem. (bio will go
+                    here in the future)</p>
+            </div>
+            <div>
+                <h4>Languages</h4>
+                <p>+ Python <br />
+                    + C# (Learning)<br />
+                    + HTML<br />
+                    + CSS<br />
+                    + Vanilla JS
+                </p>
+            </div>
+            <div>
+                <h4>Operating Systems</h4>
+                <p>+ Windows<br />
+                    + Linux<br />
+                    + TempleOS <img style="margin-left:-5px;width: 1.2em;transform: translate(0, 2.5px);"
+                        src="assets/images/trollface.png" />
+                </p>
+            </div>
+            <div>
+                <h4>Version/Source Control</h4>
+                <p>+ Git (Shoutout Torvalds)</p>
+            </div>
+            <h2 id="certifications">Certification</h2>
+            <div>
+                <h4>CompTIA A+ [Studying]</h4>
+                <p>I'm finally taking the initiative to obtain my CompTIA A+ cert. I am already fairly knowledged in
+                    computers and troubleshooting, so I believe I have a headstart. With the annoyance of school work, I
+                    except a delay. I predict that I will obtain the certification sometime in early 2024.</p>
+            </div>
+            <div>
+                <h4>CompTIA Net+ [Planned]</h4>
+                <p>I am fairly set on becoming a network engineer. In the near future I plan on studying for the
+                    Net+
+                    cert. After that, I will most definetely go for a CCNA/CCNP.</p>
+            </div>
+            <h2 id="projects">Projects</h2>
+            <div>
+                <h4><a href="https://github.com/The-Holy-Church-of-Terry-Davis/dawn" target="_blank">THCoTD/DAWN</a>
+                </h4>
+                <p><b>Languages:</b> C#, JavaScript, Python, HTML, CSS, Dockerfile<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a>, <a
+                        href="https://github.com/yendisfish" target="_blank">YendisFish</a><br />
+                    <br />
+                    This is a webserver project written in JS/PY and C#. The webserver itself is written entirely in C#,
+                    however, the frontend of the webserver is written in JS/PY. JS/PY also will help take care of
+                    deploying new DAWN applications.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://github.com/The-Holy-Church-of-Terry-Davis/divinityC-x86_64"
+                        target="_blank">THCoTD/divinityC-x86_64 (Divinity) [WIP]</a></h4>
+                <p><b>Languages:</b> C, C#, Makefile<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a>, <a
+                        href="https://github.com/yendisfish" target="_blank">YendisFish</a><br />
+                    <br />
+                    The Holy Church Of Terry Davis would like to present our new project: Divinity!<br />This is an
+                    x86_64 operating system written in C, C#, and x86_64 assembly!
+
+                    This is a passion project and is likely to be unstable for most cases! But this is our hurrah for
+                    Terry himself.
+                </p>
+            </div>
+
+            <div id="projects-midway">
+                <h4><a href="https://github.com/QAEZZ/auto-pico-ducky" target="_blank">QAEZZ/auto-pico-ducky</a></h4>
+                <p><b>Languages:</b> Python<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    A command-line tool to automatically turn your RPI Pico into a bad usb, powered by <a
+                        href="https://github.com/dbisu/pico-ducky" target="_blank">pico-ducky</a> by <a
+                        href="https://github.com/dbisu" target="_blank">dibisu</a>.
+                    The code on this project is awful, I do plan on remaking it and adding more features such as
+                    automatic mounting.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://github.com/The-Holy-Church-of-Terry-Davis/godspeak-package"
+                        target="_blank">THCoTD/godspeak-package</a></h4>
+                <p><b>Languages:</b> Python<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    A simple <a href="https://pypi.org/" target="_blank">PYPI</a> package for Terry's Godspeak/Godsay.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://github.com/QAEZZ/societal-collapse" target="_blank">QAEZZ/societal-collapse</a>
+                </h4>
+                <p><b>Languages:</b> Python<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    An "end of civilation" simulator using machine learning. AI/ML will always fascinate me, I plan on
+                    revisiting this project in the future.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://github.com/QAEZZ/messier-api-stable" target="_blank">QAEZZ/messier-api-stable</a>
+                </h4>
+                <p><b>Languages:</b> JavaScript, Python<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    A simple API for getting information on objects in the messier catalog.
+                    <br />Complete with documentation.<br />
+                    I do plan on revisting this project also, as my code back then was beyond atrocious.
+                </p>
+            </div>
+
+            <h2 id="webdev-projects">Webdev Projects</h2>
+            <div>
+                <h4><a href="https://thcotd.org" target="_blank">www.thcotd.org</a></h4>
+                <p><b>Languages:</b> HTML, CSS, JS<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    A 90's styled website for The Holy Church of Terry Davis.<br />The title link above leads to the
+                    domain.<br />If you wish to go the repo, click <a
+                        href="https://github.com/The-Holy-Church-of-Terry-Davis/The-Holy-Church-of-Terry-Davis.github.io"
+                        target="_blank">here</a>.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://yendy.dev" target="_blank">www.yendy.dev</a></h4>
+                <p><b>Languages:</b> HTML, CSS, JS<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    A website for my good friend <a href="https://github.com/yendisfish"
+                        target="_blank">Yendy</a>.<br />It was designed by him and made by me.<br />The title link above
+                    leads to the domain.<br />If you wish to go to the repo, click <a
+                        href="https://github.com/yendisfish/yendy.dev" target="_blank">here</a>.
+                </p>
+            </div>
+
+            <div>
+                <h4><a href="https://github.com/qaezz/qaezz.dev" target="_blank">www.qaezz.dev</a> <img
+                        style="margin-left:-5px;width: 1.1em;transform: translate(0, 2.5px);"
+                        src="assets/images/trollface.png" /></h4>
+                <p><b>Languages:</b> HTML, CSS, JS<br />
+                    <b>Contributers:</b> <a href="https://github.com/qaezz" target="_blank">QAEZZ</a><br />
+                    <br />
+                    This. <img style="margin-left:-5px;width: 1.1em;transform: translate(0, 2.5px);"
+                        src="assets/images/trollface.png" /><br />The
+                    title link above leads to the repo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <br />
+        © 2023 QAEZZ a/k/a QÆZZ. All rights reserved.
+        <br />
+        Designed by <a href="https://github.com/qaezz" target="_blank">QAEZZ</a> | Made by <a
+            href="https://github.com/qaezz" target="_blank">QAEZZ</a>
+        <br />
+        All icons used belong to their respective owners.
+        <br />
+        I, QAEZZ, am not endorsed nor related to any of the companies/organizations shown on this website.
+        <br />
+        <br />
+        <a href="#">Back to top?</a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+    <script src="./uhoh.js"></script>
+</body>
+
+</html>
