@@ -21,7 +21,7 @@ particlesJS("particles-js",
                     "nb_sides": 3
                 },
                 "image": {
-                    "src": "img/github.svg",
+                    "src": "https://reinitd.github.io/qaezz-dev/img/github.svg",
                     "width": 100,
                     "height": 100
                 }
