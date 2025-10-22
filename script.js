@@ -119,7 +119,7 @@ function toggleMusic() {
 function playSong(songData) {
     let song = `assets/audio/${songData.name}.mp3`;
 
-    songCoverImage.setAttribute('src', `assets/images/covers/${songData.name}.${songData.extension}`);
+    songCoverImage.setAttribute('src', `https://reinitd.github.io/qaezz-dev/assets/images/covers/${songData.name}.${songData.extension}`);
     songNameField.textContent = songData.name;
     songArtistField.textContent = songData.artist;
 
